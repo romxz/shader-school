@@ -9,11 +9,10 @@ uniform mat4 inverseView;
 uniform mat4 inverseProjection;
 
 uniform vec3 ambient;
+
 uniform vec3 diffuse;
 uniform vec3 specular;
-
 uniform vec3 lightPosition;
-
 uniform float shininess;
 
 varying vec3 fragNormal;
