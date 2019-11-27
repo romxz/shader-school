@@ -15,6 +15,10 @@ uniform vec3 ambient;
 uniform vec3 diffuse;
 uniform vec3 lightDirection;
 
+varying vec3 vNormal;
+
 void main() {
-  gl_Position = vec4(position, 1);
+  
+  vNormal = (vec4(normal, 0.0) * inverseModel * inverseView).xyz;
+  gl_Position = projection * view * model * vec4(position, 1);;
 }
