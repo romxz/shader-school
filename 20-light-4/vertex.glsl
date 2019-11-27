@@ -13,6 +13,17 @@ uniform mat4 inverseProjection;
 
 uniform vec3 lightPosition;
 
+varying vec3 fragNormal;
+varying vec3 fragPosition;
+varying vec3 fragLightDirection;
+
 void main() {
-  gl_Position = vec4(position, 1);
+
+  fragNormal = (vec4(normal, 0) * inverseModel * inverseView).xyz;
+  
+  vec4 viewPosition = view * model * vec4(position, 1);
+  fragPosition = viewPosition.xyz;
+  gl_Position = projection * viewPosition;
+  
+  fragLightDirection = (view * vec4(lightPosition, 1) - viewPosition).xyz;
 }
