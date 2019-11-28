@@ -3,10 +3,13 @@ precision mediump float;
 uniform sampler2D positions;
 uniform sampler2D speeds;
 
-#define CENTER_ATTRACTION 0.000005
+//#define CENTER_ATTRACTION 0.000005
+#define CENTER_ATTRACTION 0.00001
 #define SPEED_LIMIT 0.00225
-#define SEPARATION 0.0000125
-#define ALIGNMENT 0.000001
+//#define SEPARATION 0.0000125
+#define SEPARATION 0.0000175
+//#define ALIGNMENT 0.000001
+#define ALIGNMENT 0.000002
 #define COHESION 0.00002
 #define SIZE 64.0
 
